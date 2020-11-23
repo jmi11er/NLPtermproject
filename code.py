@@ -19,6 +19,7 @@ def readGreek():
         data.append(0)
         if len(data) % 100 == 0:
             print(len(data), " files read in")
+    print("Number of files: " , len(data))
     return data
 
 def readEnglish():
@@ -32,6 +33,7 @@ def readEnglish():
         data.append(0)
         if len(data) % 100 == 0:
             print(len(data), " files read in")
+    print("Number of files: " , len(data))
     return data
 
 
@@ -53,28 +55,24 @@ def readSpanish():
         data.append(0)
         if len(data) % 100 == 0:
             print(len(data), " files read in")
+    print("Number of files: " , len(data))
     return data
 
-def readPolish():
+def readCzech():
     data = []
 
-    print("reading in the Polish data")
+    print("reading in the Czech data")
 
-    for mp3 in glob.glob(cur_dir+"/data/Polish/Polish1/*.mp3"):
-        sound = parselmouth.Sound(mp3)
+    for wav_file in glob.glob(cur_dir+"/data/Czech/*.wav"):
+        sound = parselmouth.Sound(wav_file)
         #extract features, add them to an array
         data.append(0)
         if len(data) % 100 == 0:
             print(len(data), " files read in")
-    for mp3 in glob.glob(cur_dir+"/data/Polish/Polish2/*.mp3"):
-        sound = parselmouth.Sound(mp3)
-        #extract features, add them to an array
-        data.append(0)
-        if len(data) % 100 == 0:
-            print(len(data), " files read in")
+    print("Number of files: " , len(data))
     return data
 
-#polishdata = readPolish()
+czechdata = readCzech()
 greekdata = readGreek()
 englishdata = readEnglish()
 spanishdata = readSpanish()
